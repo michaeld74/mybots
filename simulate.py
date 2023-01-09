@@ -4,7 +4,7 @@ import time
 physicsClient = p.connect(p.GUI)
 
 for i in range(1000):
-    time.sleep(.05)
+    time.sleep(.5)
     p.stepSimulation()
     print(i)
 
