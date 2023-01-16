@@ -19,4 +19,8 @@ matplotlib.pyplot.legend(['Back Leg','Front Leg'])
 
 matplotlib.pyplot.show()
 
+sinValues = numpy.load('data/sinVals.npy')
 
+matplotlib.pyplot.plot(sinValues)
+
+matplotlib.pyplot.show()
