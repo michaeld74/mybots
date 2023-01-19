@@ -7,8 +7,7 @@ import pybullet as p
 
 simulation = SIMULATION()
 
-
-SIMULATION.Run()
+simulation.Run()
 
 
 

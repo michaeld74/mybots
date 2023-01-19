@@ -28,41 +28,35 @@ class SIMULATION:
         
         # Insert plane, body and world
         pyrosim.Prepare_To_Simulate(self.robot.robotId)
-
-        ROBOT.Prepare_To_Sense(self)
-        
-        
-        
-
+        self.robot.Prepare_To_Sense()
+        self.robot.Prepare_To_Act(self.robot.robotId)
 
         
+        
+        
 
 
-    def Run():
+        
+
+
+    def Run(self):
         for i in range(1000):
 
             print(i)
-            time.sleep(.000005)
+            time.sleep(.0005)
             p.stepSimulation()
+            self.robot.Sense(i)
+            self.robot.Act(i)
+            
+
+            # self.robot.Sense(i)
+
+            # print(self.robot.Sense.sensor.Get_Value())
 
             # # Record back and front leg data at each step
-            # backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
-            # frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
+            # 
 
-            # # Motors
-            # pyrosim.Set_Motor_For_Joint(
-            #     bodyIndex = robotId,
-            #     jointName = b"Torso_BackLeg",
-            #     controlMode = p.POSITION_CONTROL,
-            #     targetPosition = targetAnglesBackLeg[i],
-            #     maxForce = c.maxForce)
 
-            # pyrosim.Set_Motor_For_Joint(
-            #     bodyIndex = robotId,
-            #     jointName = b"Torso_FrontLeg",
-            #     controlMode = p.POSITION_CONTROL,
-            #     targetPosition = targetAnglesFrontLeg[i],#random.uniform(-3.1415/2.0, 3.1415/2.0),
-            #     maxForce = c.maxForce)
 
     # def __del__(self):
 
