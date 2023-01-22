@@ -4,6 +4,9 @@ from sensor import SENSOR
 from motor import MOTOR
 import constants as c
 import numpy
+from pyrosim.neuralNetwork import NEURAL_NETWORK
+
+
 
 
 # physicsClient = p.connect(p.GUI)
@@ -14,6 +17,7 @@ class ROBOT:
 
         self.robotId = p.loadURDF("body.urdf")
         self.motors = {}
+        self.nn = NEURAL_NETWORK("brain.nndf")
         
 
     def Prepare_To_Sense(self):
@@ -40,6 +44,13 @@ class ROBOT:
         # print(self.motors)
         for jointName in self.motors:
             self.motors[jointName].Set_Value(t)
+
+    def Think(self):
+        self.nn.Update()
+        self.nn.Print()
+        
+
+
            
 
         
