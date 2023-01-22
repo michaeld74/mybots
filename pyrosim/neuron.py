@@ -57,7 +57,7 @@ class NEURON:
         return self.type == c.HIDDEN_NEURON
 
     def Is_Motor_Neuron(self):
-
+        # print(self.type)
         return self.type == c.MOTOR_NEURON
 
     def Print(self):
