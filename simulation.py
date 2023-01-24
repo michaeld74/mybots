@@ -43,7 +43,7 @@ class SIMULATION:
         for i in range(1000):
 
             print(i)
-            time.sleep(.0005)
+            time.sleep(.00005)
             p.stepSimulation()
             self.robot.Sense(i)
             self.robot.Think()

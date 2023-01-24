@@ -55,15 +55,15 @@ class NEURON:
         for key in synapses:
             if key[1] == self.Get_Name():
                 self.Allow_Presynaptic_Neuron_To_Influence_Me(synapses[key].Get_Weight(), neurons[key[0]].Get_Value())
-                print(key, 'key')
-                print(neurons[key[0]].Get_Value(), 'check2')
+                # print(key, 'key')
+                # print(neurons[key[0]].Get_Value(), 'check2')
         self.Threshold()
         # exit()
 
     def Allow_Presynaptic_Neuron_To_Influence_Me(self, weight, value):
-        print(weight, value, '1')
+        # print(weight, value, '1')
         prod = self.Add_To_Value(weight*value)
-        print(weight, value, prod, '2')
+        # print(weight, value, prod, '2')
         return prod
         
         
