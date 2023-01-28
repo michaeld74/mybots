@@ -18,6 +18,7 @@ class ROBOT:
         self.robotId = p.loadURDF("body.urdf")
         self.motors = {}
         self.nn = NEURAL_NETWORK("brain.nndf")
+    
         
 
     def Prepare_To_Sense(self):
@@ -57,8 +58,20 @@ class ROBOT:
 
     def Think(self):
         self.nn.Update()
-        self.nn.Print()
+        # self.nn.Print()
         
+    def Get_Fitness(self):
+        stateOfLinkZero = p.getLinkState(self.robotId,0)
+        xCoordinateOfLinkZero = stateOfLinkZero[0][0]
+        print(xCoordinateOfLinkZero)
+
+        f = open("fitness.txt", "w")
+        f.write(str(xCoordinateOfLinkZero))
+        f.close()
+        
+        exit()
+
+
 
 
            

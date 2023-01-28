@@ -11,3 +11,6 @@ maxForce = 50
 #How many times for loop iterates
 
 loop = 1000
+
+
+numberOfGenerations = 25

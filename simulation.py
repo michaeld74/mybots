@@ -10,9 +10,20 @@ import time
 
 class SIMULATION:
 
-    def __init__(self):
-        self.physicsClient = p.connect(p.GUI)
+    def __init__(self, directOrGUI):
         
+        self.directOrGUI = directOrGUI
+
+
+        if directOrGUI == 'DIRECT':
+            self.physicsClient = p.connect(p.DIRECT)
+        else:
+            self.physicsClient = p.connect(p.GUI)
+
+        # self.physicsClient = p.connect(p.DIRECT)# p.connect(p.GUI)
+                
+
+
         p.setAdditionalSearchPath(pybullet_data.getDataPath())
 
         # Initialize self.world and self.robot
@@ -32,6 +43,10 @@ class SIMULATION:
         self.robot.Prepare_To_Act(self.robot.robotId)
 
         
+
+
+
+        
         
         
 
@@ -42,8 +57,8 @@ class SIMULATION:
     def Run(self):
         for i in range(1000):
 
-            print(i)
-            time.sleep(.00005)
+            # print(i)
+            time.sleep(.0000005)
             p.stepSimulation()
             self.robot.Sense(i)
             self.robot.Think()
@@ -56,6 +71,11 @@ class SIMULATION:
 
             # # Record back and front leg data at each step
             # 
+
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
+        # pass
+
 
 
 
