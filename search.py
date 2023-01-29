@@ -1,11 +1,14 @@
 import os
-from hillclimber import HILL_CLIMBER
+from parallelHillClimber import PARALLEL_HILL_CLIMBER
+import sys
 
 
-hc = HILL_CLIMBER()
+phc = PARALLEL_HILL_CLIMBER()
 
-hc.Evolve()
-hc.Show_Best()
+# directOrGUI = sys.argv[1]
+
+phc.Evolve()
+phc.Show_Best()
 
 # HILL_CLIMBER.Evolve()
 

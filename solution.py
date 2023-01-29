@@ -2,25 +2,41 @@ import numpy as np
 import pyrosim.pyrosim as pyrosim
 import os
 import random
+import time
 
 
 class SOLUTION:
 
-    def __init__(self):
+    def __init__(self, nextAvailableID):
         self.weights = np.random.rand(3,2)
         self.weights = self.weights * 2 - 1
+        self.myID = nextAvailableID
         # self.Create_Brain()
         
     
-    def Evaluate(self):
+    def Evaluate(self, directOrGUI):
+        pass
+        
+        # os.system("python3 simulate.py GUI")
+        
+        # os.system('python3 ../mybots/simulate.py')
+        
+        # python simulate.py
+
+    def Start_Simulation(self, directOrGUI):
         self.Create_Brain()
         self.Create_Body()
         self.Create_World()
-        os.system("python3 simulate.py DIRECT")
-        # os.system('python3 ../mybots/simulate.py')
-        fitnessFile = open("fitness.txt", "r")
-        self.fitness = fitnessFile.read()
-        # python simulate.py
+        os.system("python3 simulate.py " + directOrGUI + " &" + str(self.myID))
+
+    def Wait_For_Simulation_To_End(self):
+        while not os.path.exists("fitness" + str(self.myID) + ".txt"):
+            time.sleep(0.01)
+        fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
+        self.fitness = float(fitnessFile.read())
+        os.system("rm fitness" + str(self.myID) + ".txt")
+        #Delete here  stpe 62
+        # print(self.fitness, 'fitty')
 
     def Create_World(self):
         pass
@@ -29,7 +45,8 @@ class SOLUTION:
         pass
 
     def Create_Brain(self):
-        pyrosim.Start_NeuralNetwork("brain.nndf")
+        # pyrosim.Start_NeuralNetwork("brain.nndf")
+        pyrosim.Start_NeuralNetwork("brain" + str(self.myID) + ".nndf")
 
         # Send Sensor Neurons
         pyrosim.Send_Sensor_Neuron(name = 0 , linkName = "Torso")
@@ -41,10 +58,10 @@ class SOLUTION:
         pyrosim.Send_Motor_Neuron( name = 4 , jointName = 'Torso_FrontLeg')
 
         # Send Synapse
-        pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = 1.5 )
-        pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -0.5 )
-        pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -0.5 )
-        pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -0.5 )
+        # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 3 , weight = 1.5 )
+        # pyrosim.Send_Synapse( sourceNeuronName = 1 , targetNeuronName = 3 , weight = -0.5 )
+        # pyrosim.Send_Synapse( sourceNeuronName = 0 , targetNeuronName = 4 , weight = -0.5 )
+        # pyrosim.Send_Synapse( sourceNeuronName = 2 , targetNeuronName = 4 , weight = -0.5 )
 
 
         for currentRow in range(3):
@@ -65,3 +82,5 @@ class SOLUTION:
         # return self.weights
         # print(self.weights, 'weigs2')
 
+    def Set_ID(self, id):
+        self.myID = id

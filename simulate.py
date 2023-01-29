@@ -9,10 +9,12 @@ import sys
 
 # sys.argv[0] = 'python3' 
 directOrGUI = sys.argv[1]
+solutionID = sys.argv[2]
 
-simulation = SIMULATION(directOrGUI)
+simulation = SIMULATION(directOrGUI, solutionID)
 
 simulation.Run()
 
+# Intersting what we do here
 simulation.Get_Fitness()
 

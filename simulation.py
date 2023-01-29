@@ -10,7 +10,7 @@ import time
 
 class SIMULATION:
 
-    def __init__(self, directOrGUI):
+    def __init__(self, directOrGUI, solutionID):
         
         self.directOrGUI = directOrGUI
 
@@ -29,7 +29,7 @@ class SIMULATION:
         # Initialize self.world and self.robot
         
         self.world = WORLD()
-        self.robot = ROBOT()
+        self.robot = ROBOT(solutionID)
         
     
         # Set gravity and set addionatl search path
