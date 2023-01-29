@@ -24,22 +24,32 @@ class SOLUTION:
         # python simulate.py
 
     def Start_Simulation(self, directOrGUI):
+        
         self.Create_Brain()
         self.Create_Body()
         self.Create_World()
-        os.system("python3 simulate.py " + directOrGUI + " &" + str(self.myID))
+        # print('jtan1')
+        # print("python3 simulate.py " + directOrGUI + " &" + str(self.myID))
+        # print("python3 simulate.py " + directOrGUI + " " + str(self.myID))
+        # os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID))
+        os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " &")
+        # os.system("python3 simulate.py " + directOrGUI + " &" + str(self.myID))
+        
 
     def Wait_For_Simulation_To_End(self):
         while not os.path.exists("fitness" + str(self.myID) + ".txt"):
             time.sleep(0.01)
         fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
         self.fitness = float(fitnessFile.read())
+        
         os.system("rm fitness" + str(self.myID) + ".txt")
         #Delete here  stpe 62
         # print(self.fitness, 'fitty')
 
     def Create_World(self):
-        pass
+        pyrosim.Start_SDF("world.sdf")
+        pyrosim.Send_Cube(name="Box", pos=[-2,2,0.5] , size=[1,1,1])
+        pyrosim.End()
 
     def Create_Body(self):
         pass

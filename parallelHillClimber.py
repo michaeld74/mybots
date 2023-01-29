@@ -20,25 +20,27 @@ class PARALLEL_HILL_CLIMBER:
         
 
     def Evolve(self):
-        for i in range(c.populationSize):
-            self.parents[i].Start_Simulation('DIRECT ' + str(i))
-        for i in range(c.populationSize):
-            # pass
-            self.parents[i].Wait_For_Simulation_To_End()
+        self.Evaluate(self.parents)
+        # exit()
+        # for i in range(c.populationSize):
+        #     self.parents[i].Start_Simulation('DIRECT ' + str(i))
+        #     print('fields')
+        # for i in range(c.populationSize):
+        #     # pass
+        #     self.parents[i].Wait_For_Simulation_To_End()
         # self.parent.Evaluate()
         # os.system("python3 simulate.py GUI")
         for j in range(c.numberOfGenerations):
             self.Evolve_For_One_Generation()
-        pass
+        
 
     def Evolve_For_One_Generation(self):
         self.Spawn()
+        self.Mutate()
+        self.Evaluate(self.children)
         
-        
-        # self.Mutate()
-        # self.child.Evaluate()
-        # self.Print()
-        # self.Select()
+        self.Print()
+        self.Select()
         
 
     def Spawn(self):
@@ -47,27 +49,44 @@ class PARALLEL_HILL_CLIMBER:
             self.children[i] = copy.deepcopy(self.parents[i])
             self.children[i].Set_ID(self.nextAvailableID)
             self.nextAvailableID += 1
-        print(self.children, 'eivbuebvyu')
-        exit()
+        # print(self.children, 'eivbuebvyu')
+        # exit()
         # self.child = copy.deepcopy(self.parent)
         # self.child.Set_ID(self.nextAvailableID)
         # self.nextAvailableID += 1
 
     def Mutate(self):
-        self.child.Mutate()
+        for i in self.children:
+            self.children[i].Mutate()
         # print(self.child.weights, 'scw')
         # print(self.parent.weights, 'spw')
         # exit()
 
+    def Evaluate(self, solutions):
+        for i in solutions:
+            solutions[i].Start_Simulation("DIRECT")
+        for i in solutions:
+            solutions[i].Wait_For_Simulation_To_End()
+
     def Select(self):
-        if self.parent.fitness < self.child.fitness:
-            self.parent = self.child
+        for i in self.children:
+            if self.children[i].fitness < self.parents[i].fitness:
+                self.parents[i] = self.children[i]
+        
         # print(self.parent.fitness,'pf')
         # print(self.child.fitness, 'cf')
         
     def Print(self):
-        print(self.parent.fitness, self.child.fitness, 'parent, child')
+        for i in self.parents:
+            print("Fitty:", self.parents[i].fitness, self.children[i].fitness)
 
     def Show_Best(self):
         # os.system("python3 simulate.py GUI")
-        pass
+        print('openses')
+        z = 0
+        val = self.parents[0].fitness
+        for i in self.parents:
+           if val > self.parents[i].fitness:
+            minVal = self.parents[i].fitness
+            minIndex = i
+        self.parents[z].Start_Simulation("GUI")

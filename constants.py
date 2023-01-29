@@ -15,4 +15,4 @@ loop = 1000
 
 numberOfGenerations = 25
 
-populationSize = 10
+populationSize = 5
