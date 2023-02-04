@@ -13,7 +13,7 @@ maxForce = 50
 loop = 1000
 
 
-numberOfGenerations = 5
+numberOfGenerations = 10
 
 populationSize = 5
 
@@ -21,4 +21,4 @@ numSensorNeurons = 9
 
 numMotorNeurons = 8
 
-motorJointRange = 0.3
+motorJointRange = 0.4

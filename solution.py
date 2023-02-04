@@ -9,7 +9,7 @@ import constants as c
 class SOLUTION:
 
     def __init__(self, nextAvailableID):
-        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons)
+        self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons) #* 2 - 1
         self.weights = self.weights * 2 - 1
         self.myID = nextAvailableID
         # self.Create_Brain()
@@ -40,6 +40,7 @@ class SOLUTION:
     def Wait_For_Simulation_To_End(self):
         while not os.path.exists("fitness" + str(self.myID) + ".txt"):
             time.sleep(0.01)
+            # print('ege')
         fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
         self.fitness = float(fitnessFile.read())
         

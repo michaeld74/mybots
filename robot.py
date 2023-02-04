@@ -68,8 +68,12 @@ class ROBOT:
         # self.nn.Print()
         
     def Get_Fitness(self):
-        stateOfLinkZero = p.getLinkState(self.robotId,0)
-        xCoordinateOfLinkZero = stateOfLinkZero[0][0]
+        # stateOfLinkZero = p.getLinkState(self.robotId,0)
+        basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+        basePosition = basePositionAndOrientation[0]
+        xCoordinateOfLinkZero = basePosition[0]
+        # basePosition = basePositionAndOrientation[0]
+        # xPosition = basePosition[0]
         print(xCoordinateOfLinkZero, 'xcoord')
         # print('ujn')
 
