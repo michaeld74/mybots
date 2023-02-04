@@ -69,8 +69,9 @@ class PARALLEL_HILL_CLIMBER:
             solutions[i].Wait_For_Simulation_To_End()
 
     def Select(self):
+        
         for i in self.children:
-            if self.children[i].fitness < self.parents[i].fitness:
+            if self.children[i].fitness > self.parents[i].fitness:
                 self.parents[i] = self.children[i]
         
         # print(self.parent.fitness,'pf')
@@ -83,10 +84,13 @@ class PARALLEL_HILL_CLIMBER:
     def Show_Best(self):
         # os.system("python3 simulate.py GUI")
         print('openses')
+        
         z = 0
         val = self.parents[0].fitness
         for i in self.parents:
-           if val > self.parents[i].fitness:
-            minVal = self.parents[i].fitness
-            minIndex = i
+            print(val, self.parents[i].fitness, 'comparing')
+            if val < self.parents[i].fitness:
+                val = self.parents[i].fitness
+                z = i
+        print(z, self.parents[z].fitness, 'final')
         self.parents[z].Start_Simulation("GUI")
