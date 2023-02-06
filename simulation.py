@@ -73,6 +73,7 @@ class SIMULATION:
             # 
 
     def Get_Fitness(self):
+        # print()
         self.robot.Get_Fitness()
         # pass
 

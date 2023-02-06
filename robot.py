@@ -2,11 +2,12 @@ import pybullet as p
 import pyrosim.pyrosim as pyrosim
 from sensor import SENSOR
 from motor import MOTOR
+from world import WORLD
 import constants as c
 import numpy
 from pyrosim.neuralNetwork import NEURAL_NETWORK
 import os
-
+import math
 
 
 
@@ -16,12 +17,17 @@ class ROBOT:
 
     def __init__(self, solutionID):
         self.solutionID = solutionID
-
+        # self.world = p.loadSDF("world.sdf")
+        self.ball = p.loadURDF("ball.urdf")
         self.robotId = p.loadURDF("body.urdf")
         self.motors = {}
         # self.nn = NEURAL_NETWORK("brain.nndf")
         self.nn = NEURAL_NETWORK("brain" + str(solutionID) + ".nndf")
         os.system("rm brain" + str(solutionID) + ".nndf")
+
+        # print(self.robotId,'sri')
+        # print(self.ball,'sri')
+
 
         #Deletes
         # 
@@ -68,13 +74,28 @@ class ROBOT:
         # self.nn.Print()
         
     def Get_Fitness(self):
+        
         # stateOfLinkZero = p.getLinkState(self.robotId,0)
-        basePositionAndOrientation = p.getBasePositionAndOrientation(self.robotId)
+        # basePositionAndOrientation1 = p.getBasePositionAndOrientation(self.ball)
+        basePositionAndOrientation = p.getBasePositionAndOrientation(self.ball)
+        # basePositionAndOrientation = p.getBasePositionAndOrientation(WORLD.ball)
+        basePositionAndOrientation1 = p.getBasePositionAndOrientation(self.robotId)
+        # print(p.getBasePositionAndOrientation(self.ball))
         basePosition = basePositionAndOrientation[0]
-        xCoordinateOfLinkZero = basePosition[0]
+        basePosition1 = basePositionAndOrientation1[0]
+        # basePosition1 = basePositionAndOrientation1[0]
+
+        xCoordinateOfLinkZero = basePosition[0]*2+basePosition1[0]
+        
+        # if basePosition[2] > 1:
+        #     xCoordinateOfLinkZero = basePosition[1]+basePosition1[1]
+        #     # xCoordinateOfLinkZero = basePosition1[0]**2
+        # else:
+        #     xCoordinateOfLinkZero = -3
+
         # basePosition = basePositionAndOrientation[0]
         # xPosition = basePosition[0]
-        print(xCoordinateOfLinkZero, 'xcoord')
+        
         # print('ujn')
 
         f = open("tmp" + self.solutionID + ".txt", "w")
