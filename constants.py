@@ -10,15 +10,15 @@ maxForce = 50
 
 #How many times for loop iterates
 
-loop = 3000
+loop = 1500
 
 
-numberOfGenerations = 30
+numberOfGenerations = 3
 
-populationSize = 5
+populationSize = 1
 
-numSensorNeurons = 5
+numSensorNeurons = 2
 
-numMotorNeurons = 4
+numMotorNeurons = 1
 
 motorJointRange = 1

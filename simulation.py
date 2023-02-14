@@ -11,7 +11,7 @@ import constants as c
 
 class SIMULATION:
 
-    def __init__(self, directOrGUI, solutionID):
+    def __init__(self, directOrGUI):
         
         self.directOrGUI = directOrGUI
 
@@ -30,7 +30,7 @@ class SIMULATION:
         # Initialize self.world and self.robot
         
         self.world = WORLD()
-        self.robot = ROBOT(solutionID)
+        self.robot = ROBOT()
         
     
         # Set gravity and set addionatl search path

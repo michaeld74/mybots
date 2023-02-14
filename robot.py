@@ -15,15 +15,15 @@ import math
 
 class ROBOT:
 
-    def __init__(self, solutionID):
-        self.solutionID = solutionID
+    def __init__(self):
+        # self.solutionID = solutionID
         # self.world = p.loadSDF("world.sdf")
         self.ball = p.loadURDF("ball.urdf")
         self.robotId = p.loadURDF("body.urdf")
         self.motors = {}
         # self.nn = NEURAL_NETWORK("brain.nndf")
-        self.nn = NEURAL_NETWORK("brain" + str(solutionID) + ".nndf")
-        os.system("rm brain" + str(solutionID) + ".nndf")
+        self.nn = NEURAL_NETWORK("brain.nndf")
+        os.system("rm brain.nndf")
 
         # print(self.robotId,'sri')
         # print(self.ball,'sri')
