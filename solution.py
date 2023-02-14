@@ -103,20 +103,20 @@ class SOLUTION:
 
 
         # # Send Motor Neurons for joints
-        pyrosim.Send_Motor_Neuron( name = 2 , jointName = "Limb0_Limb1")
+        pyrosim.Send_Motor_Neuron(name=2, jointName = "Limb0_Limb1")
         # pyrosim.Send_Motor_Neuron( name = 22 , jointName = "Torso_BackLeg1")
         count = 0
         for i in range(self.links):
-            pyrosim.Send_Sensor_Neuron(name = count, linkName='Limb'+str(i))
+            pyrosim.Send_Sensor_Neuron(name=count,linkName='Limb'+str(i))
             count += 1
 
         for i in range(self.links-1):
-            pyrosim.Send_Motor_Neuron( name = i+count , jointName = 'Limb'+str(i)+'_Limb'+str(i+1))
+            pyrosim.Send_Motor_Neuron(name=i+count, jointName='Limb'+str(i)+'_Limb'+str(i+1))
 
 
         for i in range(self.links):
             for j in range(self.links-1):
-                pyrosim.Send_Synapse( sourceNeuronName = i , targetNeuronName = j+count , weight = np.random.rand() * 2 - 1 )
+                pyrosim.Send_Synapse(sourceNeuronName=i, targetNeuronName=j+count, weight=np.random.rand()*2-1)
 
 
         # Send Synapse
