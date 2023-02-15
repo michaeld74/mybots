@@ -29,10 +29,7 @@ class ROBOT:
         # print(self.ball,'sri')
 
 
-        #Deletes
-        # 
     
-        
 
     def Prepare_To_Sense(self):
         self.sensors = {}
