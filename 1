@@ -11,20 +11,6 @@ MotionThreadFunc thread started
 b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
 
 b3Printf: expected a world element, continuing without it.
-Traceback (most recent call last):
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulate.py", line 20, in <module>
-    simulation.Run()
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulation.py", line 65, in Run
-    self.robot.Think()
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/robot.py", line 70, in Think
-    self.nn.Update()
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/pyrosim/neuralNetwork.py", line 36, in Update
-    self.neurons[neuronName].Update_Sensor_Neuron()
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/pyrosim/neuron.py", line 49, in Update_Sensor_Neuron
-    self.value = self.Set_Value(pyrosim.Get_Touch_Sensor_Value_For_Link(self.Get_Link_Name()))
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/pyrosim/pyrosim.py", line 53, in Get_Touch_Sensor_Value_For_Link
-    for pt in pts:
-TypeError: 'NoneType' object is not iterable
 numActiveThreads = 0
 stopping threads
 Thread with taskId 0 exiting

@@ -14,6 +14,10 @@ class SOLUTION:
         # self.myID = nextAvailableID
         self.roof = np.random.randint(2,3)
         self.links = np.random.randint(5,15)
+        self.binSensor = np.random.randint(0,2,self.links)
+
+        # assign7
+        roof = np.random.randint(2,3)
         
 
 
@@ -67,6 +71,9 @@ class SOLUTION:
 
     def Create_Body(self):
             pyrosim.Start_URDF("body.urdf")
+            color = "blue"
+            if self.binSensor[0] == 1:
+                color = "green"
 
 
 
@@ -74,19 +81,27 @@ class SOLUTION:
             y = (np.random.randint(0,15)+15)/10
             z = (np.random.randint(0,15)+15)/10
 
-            pyrosim.Send_Cube(name='Limb0', pos=[0,0,self.roof/2], size=[x,y,z])
-            pyrosim.Send_Joint(name='Limb0_Limb1', parent='Limb0', child='Limb1', type='revolute', position=[0,(np.random.randint(0,15)+15)/40,0], jointAxis="1 0 0")
+            pyrosim.Send_Cube(name='Limb0', pos=[0,0,self.roof/2], size=[x,y,z],color=color)
+            pyrosim.Send_Joint(name='Limb0_Limb1', parent='Limb0', child='Limb1', type='revolute', position=[0,y/2,0], jointAxis="1 0 0")
         
 
             for i in range(1, self.links-1):
+                color = "blue"
+                if self.binSensor[i] == 1:
+                    color = "green"
                 x = (np.random.randint(0,15)+15)/10
                 y = (np.random.randint(0,15)+15)/10
                 z = (np.random.randint(0,15)+15)/10
-                pyrosim.Send_Cube(name='Limb'+str(i), pos=[0,y/2,self.roof/2], size=[x,y,z])
+                pyrosim.Send_Cube(name='Limb'+str(i), pos=[0,y/2,self.roof/2], size=[x,y,z],color=color)
                 pyrosim.Send_Joint(name='Limb'+str(i)+'_Limb'+str(i+1), parent='Limb'+str(i), child='Limb'+str(i+1), type='revolute', position=[0,y,0], jointAxis="1 0 0")
       
+            
+
+            color = "blue"
+            if self.binSensor[self.links-1] == 1:
+                color = "green"
             y = (np.random.randint(0,15)+15)/10
-            pyrosim.Send_Cube(name='Limb'+str(self.links-1), pos=[0,y/2,self.roof/2], size=[x,y,z])
+            pyrosim.Send_Cube(name='Limb'+str(self.links-1), pos=[0,y/2,self.roof/2], size=[x,y,z], color=color)
 
 
 
@@ -115,8 +130,9 @@ class SOLUTION:
 
 
         for i in range(self.links):
-            for j in range(self.links-1):
-                pyrosim.Send_Synapse(sourceNeuronName=i, targetNeuronName=j+count, weight=np.random.rand()*2-1)
+            if self.binSensor[i] == 1:
+                for j in range(self.links-1):
+                    pyrosim.Send_Synapse(sourceNeuronName=i, targetNeuronName=j+count, weight=np.random.rand()*2-1)
 
 
         # Send Synapse
