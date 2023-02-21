@@ -10,7 +10,7 @@ maxForce = 50
 
 #How many times for loop iterates
 
-loop = 1500
+loop = 2000
 
 
 numberOfGenerations = 3

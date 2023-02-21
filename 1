@@ -19,3 +19,15 @@ destroy semaphore
 semaphore destroyed
 destroy main semaphore
 main semaphore destroyed
+Traceback (most recent call last):
+  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulate.py", line 20, in <module>
+    simulation.Run()
+  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulation.py", line 66, in Run
+    self.robot.Act(i)
+  File "/Users/michael.diersen/Desktop/MakeUp/mybots/robot.py", line 59, in Act
+    self.motors[jointName].Set_Value(desiredAngle)
+  File "/Users/michael.diersen/Desktop/MakeUp/mybots/motor.py", line 19, in Set_Value
+    pyrosim.Set_Motor_For_Joint(
+  File "/Users/michael.diersen/Desktop/MakeUp/mybots/pyrosim/pyrosim.py", line 158, in Set_Motor_For_Joint
+    p.setJointMotorControl2(
+pybullet.error: Not connected to physics server.
