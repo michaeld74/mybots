@@ -16,4 +16,4 @@ python3 search.py
 
 # Visual Example
 
-![Alt text](drawing.heic)
+![Click HERE to view drawing of an example creature](drawing.heic)

@@ -27,8 +27,6 @@ class SOLUTION:
         self.epositions = ((np.random.rand(self.extensions+5, 2) + 0.5) * 2).round(1) #1.6 to 3
         
 
-
-        
         # self.Create_Brain()
         
     
@@ -66,7 +64,6 @@ class SOLUTION:
         # print(self.fitness, 'fitty')
 
     def Create_Ball(self):
-
         pass
 
 
@@ -106,31 +103,35 @@ class SOLUTION:
             y = (np.random.randint(0,15)+15)/10
             z = (np.random.randint(0,15)+15)/10
 
-            
-
             color = "blue"
             if self.binSensor[self.links-1] == 1:
                 color = "green"
+
             y = (np.random.randint(0,15)+15)/10
             pyrosim.Send_Cube(name='Limb'+str(self.links-1), pos=[0,self.positions[self.links-1][1]/2,self.roof/2], size=[self.positions[self.links-1][0],self.positions[self.links-1][1],z], color=color)
 
+            # Initiatlize some variables for upcoming loop
             coinflip1=0
             linked = []
             skipper = 2
 
             for i in range(self.extensions):
+                # Skip iteration of loop if we have completed extra branch offs
                 if skipper != 0:
                     skipper -= 1
                     continue
                 coinflip = np.random.randint(0,2)
                 # Determines which existing snake link to branch off of
                 linkoff = np.random.randint(2,self.links)
+                #Checks if there is already a branch at this "linkoff"
                 if linkoff in linked: pass
                 else:
                     linked.append(linkoff)
+                # Build off in the positive direction
                 if coinflip == 1:
                     pyrosim.Send_Joint(name='Limb'+str(linkoff)+'_Limb'+str(self.links+i), parent='Limb'+str(linkoff), child='Limb'+str(self.links+i), type='revolute', position=[self.positions[linkoff][0]/2,0,0], jointAxis="0 1 0")
                     pyrosim.Send_Cube(name='Limb'+str(self.links+i), pos=[self.epositions[i][0]/2,0,self.roof/2], size=[self.epositions[i][0],y,z],color=color)
+                    # Keep Branching?
                     while coinflip1 != 2:
                         # print('gothere',i)
                         pyrosim.Send_Joint(name='Limb'+str(self.links+i)+'_Limb'+str(self.links+1+i), parent='Limb'+str(self.links+i), child='Limb'+str(self.links+i+1), type='revolute', position=[self.epositions[i][0],0,0], jointAxis="0 1 0")
@@ -138,6 +139,7 @@ class SOLUTION:
                         skipper+=1
                         coinflip1 = np.random.randint(0,3)
                         i +=1
+                # Build off in the other direction
                 if coinflip == 0:
                     pyrosim.Send_Joint(name='Limb'+str(linkoff)+'_Limb'+str(self.links+i), parent='Limb'+str(linkoff), child='Limb'+str(self.links+i), type='revolute', position=[-self.positions[linkoff][0]/2,0,0], jointAxis="0 1 0")
                     pyrosim.Send_Cube(name='Limb'+str(self.links+i), pos=[-self.epositions[i][0]/2,0,self.roof/2], size=[self.epositions[i][0],y,z],color=color)
@@ -160,11 +162,6 @@ class SOLUTION:
         # pyrosim.Send_Motor_Neuron(name=1, jointName = "Limb0_Limb1")
         # pyrosim.Send_Sensor_Neuron(name=5,linkName='Limb'+str(3))
         # pyrosim.Send_Motor_Neuron(name=6, jointName = "Limb"+str(3)+"_Limb1")
-        # pyrosim.Send_Synapse(sourceNeuronName=5, targetNeuronName=3, weight=np.random.rand()*2-1)
-        # pyrosim.Send_Synapse(sourceNeuronName=5, targetNeuronName=4, weight=np.random.rand()*2-1)
-        # pyrosim.Send_Synapse(sourceNeuronName=5, targetNeuronName=6, weight=np.random.rand()*2-1)
-        # pyrosim.Send_Synapse(sourceNeuronName=0, targetNeuronName=6, weight=np.random.rand()*2-1)
-        # pyrosim.Send_Synapse(sourceNeuronName=1, targetNeuronName=6, weight=np.random.rand()*2-1)
 
 
         # # Send Motor Neurons for joints
@@ -186,8 +183,6 @@ class SOLUTION:
 
 
         # Send Synapse
-
-
 
         # for currentRow in range(c.numSensorNeurons):
         #     for currentColumn in range(c.numMotorNeurons):
