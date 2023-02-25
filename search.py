@@ -24,12 +24,16 @@ from robot import ROBOT
 import pybullet as p
 import sys
 from solution import SOLUTION
+from parallelHillClimber import PARALLEL_HILL_CLIMBER
+
 
 # sys.argv = python3 simulate.py DIRECT
 
 
 
+phc = PARALLEL_HILL_CLIMBER()
+# run = SOLUTION()
+# run.Start_Simulation()
 
-run = SOLUTION()
-run.Start_Simulation()
-
+phc.Evolve()
+phc.Show_Best()

@@ -15,15 +15,17 @@ import math
 
 class ROBOT:
 
-    def __init__(self):
-        # self.solutionID = solutionID
+    def __init__(self, solutionID):
+        self.solutionID = solutionID
         # self.world = p.loadSDF("world.sdf")
         self.ball = p.loadURDF("ball.urdf")
         self.robotId = p.loadURDF("body.urdf")
         self.motors = {}
         # self.nn = NEURAL_NETWORK("brain.nndf")
-        self.nn = NEURAL_NETWORK("brain.nndf")
-        os.system("rm brain.nndf")
+        # self.nn = NEURAL_NETWORK("brain.nndf")
+        # os.system("rm brain.nndf")
+        self.nn = NEURAL_NETWORK("brain" + str(solutionID) + ".nndf")
+        os.system("rm brain" + str(solutionID) + ".nndf")
 
         # print(self.robotId,'sri')
         # print(self.ball,'sri')
@@ -83,23 +85,25 @@ class ROBOT:
         # basePosition1 = basePositionAndOrientation1[0]
 
         # xCoordinateOfLinkZero = basePosition[0]*2+basePosition1[0]
-        # xCoordinateOfLinkZero = basePosition1[0]
+        xCoordinateOfLinkZero = basePosition1[1]
         
-        if basePosition[2] > 1:
-            xCoordinateOfLinkZero = basePosition[0]+basePosition1[0]
-            # xCoordinateOfLinkZero = basePosition1[0]**2
-        else:
-            xCoordinateOfLinkZero = -3
+        # if basePosition[2] > 1:
+        #     xCoordinateOfLinkZero = basePosition[0]+basePosition1[0]
+        #     # xCoordinateOfLinkZero = basePosition1[0]**2
+        # else:
+        #     xCoordinateOfLinkZero = -3
 
         # basePosition = basePositionAndOrientation[0]
         # xPosition = basePosition[0]
-        
+        # print(solutionID)
         # print('ujn')
-
+        
+        print('cheerio')
         f = open("tmp" + self.solutionID + ".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
         f.close()
         os.system("mv tmp" + self.solutionID + ".txt fitness" + self.solutionID + ".txt")
+        
         
 
 

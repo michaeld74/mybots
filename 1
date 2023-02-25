@@ -1,5 +1,7 @@
 pybullet build time: Jan  9 2023 14:51:26
 hget here
+nowza
+cheerio
 Version = 4.1 INTEL-20.2.48
 Vendor = Intel Inc.
 Renderer = Intel(R) Iris(TM) Plus Graphics 655
@@ -11,18 +13,6 @@ MotionThreadFunc thread started
 b3Printf: b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
 
 b3Printf: expected a world element, continuing without it.
-Traceback (most recent call last):
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulate.py", line 20, in <module>
-    simulation.Run()
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/simulation.py", line 64, in Run
-    self.robot.Sense(i)
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/robot.py", line 46, in Sense
-    self.sensors[s].Get_Value(t)
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/sensor.py", line 12, in Get_Value
-    self.values[t] = pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName)
-  File "/Users/michael.diersen/Desktop/MakeUp/mybots/pyrosim/pyrosim.py", line 53, in Get_Touch_Sensor_Value_For_Link
-    for pt in pts:
-TypeError: 'NoneType' object is not iterable
 numActiveThreads = 0
 stopping threads
 Thread with taskId 0 exiting

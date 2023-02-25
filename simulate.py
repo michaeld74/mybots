@@ -11,17 +11,19 @@ import sys
 print('hget here')
 # sys.argv[0] = 'python3' 
 directOrGUI = sys.argv[1]
-# solutionID = sys.argv[2]
+solutionID = sys.argv[2]
 
 
 
-simulation = SIMULATION(directOrGUI)
+simulation = SIMULATION(directOrGUI, solutionID)
 
+# print('bheree')
 simulation.Run()
 
 
 # Intersting what we do here
 
-# simulation.Get_Fitness()
+
+simulation.Get_Fitness()
 
 

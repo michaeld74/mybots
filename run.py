@@ -10,5 +10,5 @@ from solution import SOLUTION
 
 
 
-run = SOLUTION()
-run.Start_Simulation()
+# run = SOLUTION(0)
+# run.Start_Simulation(directOrGUI='GUI')

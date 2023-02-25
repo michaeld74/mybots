@@ -8,13 +8,13 @@ import constants as c
 
 class SOLUTION:
 
-    def __init__(self):
+    def __init__(self, nextAvailableID):
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons) #* 2 - 1
         self.weights = self.weights * 2 - 1
-        # self.myID = nextAvailableID
+        self.myID = nextAvailableID
         self.roof = np.random.randint(2,3)
         self.links = np.random.randint(3,9)
-        self.binSensor = np.random.randint(0,2,self.links)
+        self.binSensor = np.random.randint(1,2,self.links)
         
 
         # assign7
@@ -22,9 +22,9 @@ class SOLUTION:
         # x = (np.random.randint(0,15)+15)/10 # 1.5 to 3
         # y = (np.random.randint(0,15)+15)/10
         # z = (np.random.randint(0,15)+15)/10
-        print(self.positions,self.positions[0][1])
+        # print(self.positions,self.positions[0][1])
         self.extensions = np.random.randint(3,10)
-        self.epositions = ((np.random.rand(self.extensions+5, 2) + 0.5) * 2).round(1) #1.6 to 3
+        self.epositions = ((np.random.rand(self.extensions+10, 2) + 0.5) * 2).round(1) #1.6 to 3
         
 
         # self.Create_Brain()
@@ -39,23 +39,26 @@ class SOLUTION:
         
         # python simulate.py
 
-    def Start_Simulation(self):
+    def Start_Simulation(self, directOrGUI):
         
         self.Create_Ball()
         self.Create_Brain()
         self.Create_Body()
         self.Create_World()
         
+        
     
-        os.system("python3 simulate.py GUI 2&>1 &")
+        # os.system("python3 simulate.py GUI 2&>1 &")
+        os.system("python3 simulate.py " + directOrGUI + " " + str(self.myID) + " 2&>1 ")
 
         # os.system("python3 simulate.py " + directOrGUI + " &" + str(self.myID))
         
 
     def Wait_For_Simulation_To_End(self):
+        
         while not os.path.exists("fitness" + str(self.myID) + ".txt"):
             time.sleep(0.01)
-            # print('ege')
+        print(self.myID)
         fitnessFile = open("fitness" + str(self.myID) + ".txt", "r")
         self.fitness = float(fitnessFile.read())
         # print(, 'checkee')
@@ -64,7 +67,10 @@ class SOLUTION:
         # print(self.fitness, 'fitty')
 
     def Create_Ball(self):
-        pass
+        pyrosim.Start_URDF("ball.urdf")
+        pyrosim.Send_Cube(name="Ball", pos=[0,0,2] , size=[1,1,1])
+        pyrosim.End()
+        
 
 
     def Create_World(self):
@@ -132,13 +138,13 @@ class SOLUTION:
                     pyrosim.Send_Joint(name='Limb'+str(linkoff)+'_Limb'+str(self.links+i), parent='Limb'+str(linkoff), child='Limb'+str(self.links+i), type='revolute', position=[self.positions[linkoff][0]/2,0,0], jointAxis="0 1 0")
                     pyrosim.Send_Cube(name='Limb'+str(self.links+i), pos=[self.epositions[i][0]/2,0,self.roof/2], size=[self.epositions[i][0],y,z],color=color)
                     # Keep Branching?
-                    while coinflip1 != 2:
-                        # print('gothere',i)
-                        pyrosim.Send_Joint(name='Limb'+str(self.links+i)+'_Limb'+str(self.links+1+i), parent='Limb'+str(self.links+i), child='Limb'+str(self.links+i+1), type='revolute', position=[self.epositions[i][0],0,0], jointAxis="0 1 0")
-                        pyrosim.Send_Cube(name='Limb'+str(self.links+i+1), pos=[self.epositions[i+1][0]/2,0,self.roof/2], size=[self.epositions[i+1][0],y,z],color=color)
-                        skipper+=1
-                        coinflip1 = np.random.randint(0,3)
-                        i +=1
+                    # while coinflip1 != 2:
+                    #     # print('gothere',i)
+                    #     pyrosim.Send_Joint(name='Limb'+str(self.links+i)+'_Limb'+str(self.links+1+i), parent='Limb'+str(self.links+i), child='Limb'+str(self.links+i+1), type='revolute', position=[self.epositions[i][0],0,0], jointAxis="0 1 0")
+                    #     pyrosim.Send_Cube(name='Limb'+str(self.links+i+1), pos=[self.epositions[i+1][0]/2,0,self.roof/2], size=[self.epositions[i+1][0],y,z],color=color)
+                    #     skipper+=1
+                    #     coinflip1 = np.random.randint(0,3)
+                    #     i +=1
                 # Build off in the other direction
                 if coinflip == 0:
                     pyrosim.Send_Joint(name='Limb'+str(linkoff)+'_Limb'+str(self.links+i), parent='Limb'+str(linkoff), child='Limb'+str(self.links+i), type='revolute', position=[-self.positions[linkoff][0]/2,0,0], jointAxis="0 1 0")
@@ -154,7 +160,8 @@ class SOLUTION:
 
     def Create_Brain(self):
         # pyrosim.Start_NeuralNetwork("brain.nndf")
-        pyrosim.Start_NeuralNetwork("brain.nndf")
+        pyrosim.Start_NeuralNetwork("brain" + str(self.myID) + ".nndf")
+        # pyrosim.Start_NeuralNetwork("brain.nndf")
 
         # Send Sensor Neurons
         # pyrosim.Send_Sensor_Neuron(name = 0 , linkName = "Torso")
