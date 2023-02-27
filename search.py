@@ -24,6 +24,7 @@ from robot import ROBOT
 import pybullet as p
 import sys
 from solution import SOLUTION
+import numpy as np
 from parallelHillClimber import PARALLEL_HILL_CLIMBER
 
 
@@ -37,3 +38,5 @@ phc = PARALLEL_HILL_CLIMBER()
 
 phc.Evolve()
 phc.Show_Best()
+
+# np.savetxt("file1.txt", PARALLEL_HILL_CLIMBER.mat)

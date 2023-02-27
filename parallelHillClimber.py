@@ -2,6 +2,9 @@ from solution import SOLUTION
 import constants as c
 import copy
 import os
+import numpy as np
+from tempfile import TemporaryFile
+
 
 class PARALLEL_HILL_CLIMBER:
 
@@ -12,6 +15,12 @@ class PARALLEL_HILL_CLIMBER:
         # self.parent = SOLUTION()
         self.nextAvailableID = 0
         self.parents = {}
+        size = c.populationSize*c.numberOfGenerations
+        self.mat = np.array([0]*size).reshape(c.populationSize,c.numberOfGenerations)
+        # print(mat)
+        self.tracker = 0
+        # print('tracker reset')
+
         for i in range(c.populationSize):
             self.parents[i] = SOLUTION(self.nextAvailableID)
             self.nextAvailableID += 1
@@ -79,8 +88,14 @@ class PARALLEL_HILL_CLIMBER:
         # print(self.child.fitness, 'cf')
         
     def Print(self):
+        # self.mat[i,] = self.parents[i].fitness
+        
         for i in self.parents:
+            self.mat[i][self.tracker] = self.parents[i].fitness*10
+            # print(self.mat)
             print("Fitty:", self.parents[i].fitness, self.children[i].fitness)
+        self.tracker += 1
+
 
     def Show_Best(self):
         # os.system("python3 simulate.py GUI")
@@ -95,3 +110,8 @@ class PARALLEL_HILL_CLIMBER:
                 z = i
         print(z, self.parents[z].fitness, 'final')
         self.parents[z].Start_Simulation("GUI")
+        np.savetxt("file1.txt", self.mat)
+        np.save('matrix.npy', self.mat)
+
+        # outfile = TemporaryFile()
+        # np.save(outfile, self.mat)

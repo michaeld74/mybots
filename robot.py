@@ -56,6 +56,7 @@ class ROBOT:
     def Act(self, t):
         for neuronName in self.nn.Get_Neuron_Names():
             if self.nn.Is_Motor_Neuron(neuronName):
+                print(neuronName)
                 jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
                 desiredAngle = self.nn.Get_Value_Of(neuronName) * c.motorJointRange
                 self.motors[jointName].Set_Value(desiredAngle)
@@ -98,7 +99,7 @@ class ROBOT:
         # print(solutionID)
         # print('ujn')
         
-        print('cheerio')
+        print('cheerioooo')
         f = open("tmp" + self.solutionID + ".txt", "w")
         f.write(str(xCoordinateOfLinkZero))
         f.close()
