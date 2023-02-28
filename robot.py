@@ -86,7 +86,7 @@ class ROBOT:
         # basePosition1 = basePositionAndOrientation1[0]
 
         # xCoordinateOfLinkZero = basePosition[0]*2+basePosition1[0]
-        xCoordinateOfLinkZero = basePosition1[1]
+        xCoordinateOfLinkZero = 1#basePosition1[1]
         
         # if basePosition[2] > 1:
         #     xCoordinateOfLinkZero = basePosition[0]+basePosition1[0]
