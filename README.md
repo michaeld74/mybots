@@ -20,7 +20,7 @@ The body is created from a head and expands in the positive y direction extendin
 
 # Visual Example
 
-![Click HERE to view drawing of an example creature](drawing.heic)
+![Click HERE to view drawing of an example creature](drawing1.heic)
 
 ![Click the link (https://www.youtube.com/watch?v=cjOspN-YbQY) to view videos of the robot in action]
 
