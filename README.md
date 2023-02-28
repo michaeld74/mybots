@@ -22,8 +22,8 @@ The body is created from a head and expands in the positive y direction extendin
 
 ![Click HERE to view drawing of an example creature](drawing.heic)
 
-![Click the link () to view videos of the robot in action]
+![Click the link (https://www.youtube.com/watch?v=cjOspN-YbQY) to view videos of the robot in action]
 
-This video shows the bot not being trained vs 2 iterations of a more trained robot with a different morphology moving away 
+This video shows 2 interations of the robot not being trained vs 2 iterations of a more trained robot with a different morphology moving away 
 
 ![Graphical Representation of 5 simulated generations](Graph.png)
