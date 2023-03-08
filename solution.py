@@ -9,12 +9,18 @@ import constants as c
 class SOLUTION:
 
     def __init__(self, nextAvailableID):
+        
         self.weights = np.random.rand(c.numSensorNeurons,c.numMotorNeurons) #* 2 - 1
         self.weights = self.weights * 2 - 1
         self.myID = nextAvailableID
+
+        np.random.seed(26)
         self.roof = np.random.randint(4,9)
-        self.links = np.random.randint(5,9)
+        # print(self.roof)
+
+        self.links = np.random.randint(5,10)
         self.binSensor = np.random.randint(0,2,self.links*2)
+        # print(self.links)
     
         
 

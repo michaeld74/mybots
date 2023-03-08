@@ -1,6 +1,17 @@
+![Preview](THECS396AL_Final.mp4)
+
 # mybots
 
-The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible.
+The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible. What I felt made my project unique was instead of branching off the original snake, I revamped the build to add segments of the body two cubes at a time in the stair formation with added limbs branching off in other directions to identify how it would try to move in an optimal way. 
+
+# Requirements
+
+-Python 3.7/3.8
+-Linux, macOS, or Windows with Visual Studios 2017
+-numpy
+-Matplotlib
+-pyrosim
+-pybullet
 
 # Installation
 
@@ -24,12 +35,24 @@ To make adjustments and personalize your interactions with the code you can dire
 
 The body is created from a head and expands in the positive y direction extending it's body. This specific iteration is designed to create boxes with joints at their corners that alternate between touching the ground and being suspended. From here, random limbs branch off to make the body fill the 3D space. The entire evolution process then checks how far this body can branch off to follow in it's directions which are to move far from the origin in the positive y direction. 
 
+insert diagrams here
+
+# Observations
+
+I think one of the more interesting observations of this specific robot is to move far from the origin it often shifts into a claw like position or something that is simlar to the Nike logo upside down. The results varried from jumping to tumbling to actually having small movements.
+
 # Visual Example
 
 ![Click HERE to view drawing of an example creature](drawing1.heic)
 
-![Click the link (https://www.youtube.com/watch?v=cjOspN-YbQY) to view videos of the robot in action]
+![Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to view videos of the robot in action]
 
 This video shows 2 interations of the robot not being trained vs 2 iterations of a more trained robot with a different morphology moving away 
 
-![Graphical Representation of 5 simulated generations](Graph.png)
+![Graphical Representation of 5 simulated generations](V4.png)
+
+# Citations
+
+-K. Sims, "Evolving 3D Morphology and Behavior by Competition," in Artificial Life, vol. 1, no. 4, pp. 353-372, July 1994, doi: 10.1162/artl.1994.1.4.353.
+
+-https://www.reddit.com/r/ludobots/wiki/installation/
