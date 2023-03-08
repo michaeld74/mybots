@@ -24,7 +24,9 @@ The Project in this repository expands upon the guidance found in the ludobots r
 
 Clone the following repository:
 
+```
 git clone -b assign7 https://github.com/michaeld74/mybots.git 
+```
 
 # Usage
 
