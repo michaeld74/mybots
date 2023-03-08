@@ -4,7 +4,7 @@
 
 ![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](Cover.png)
 
-The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible. What I felt made my project unique was instead of branching off the original snake, I revamped the build to add segments of the body two cubes at a time in the stair formation with added limbs branching off in other directions to identify how it would try to move in an optimal way. 
+The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignment to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible. What I felt made my project unique was instead of branching off the original snake, I revamped the build to add segments of the body two cubes at a time in the stair formation with added limbs branching off in other directions to identify how it would try to move in an optimal way. 
 
 # Requirements
 
@@ -42,7 +42,7 @@ After running search you can print out a graph to display the results by running
 python3 plotFitnessValues.py
 ```
 
-To make adjustments and personalize your interactions with the code you can direct your way to constants.py. Here you can first off adjust post the population size of your sample as well as the number of generations run. You can also adjust the "loop" value which will determine how long your simulation runs for. 
+To make adjustments and personalize your interactions with the code you can direct your way to constants.py. Here you can first off adjust both the population size of your sample as well as the number of generations run. You can also adjust the "loop" value which will determine how long your simulation runs for. 
 
 # Evolution
 
@@ -50,7 +50,7 @@ The body is created from a head and expands in the positive y direction extendin
 
 # Diagrams
 
-![Fig1](Fig1.png)
+![Fig1](Fig1.png=250x250)
 
 Figure 1 displays a diagram showing the creature in its "world". There is a plane that holds the creature above ground and the creation of this robot/creature extends into the positive y direction with the head starting near the origin.
 
