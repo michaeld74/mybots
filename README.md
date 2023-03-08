@@ -9,10 +9,15 @@ The Project in this repository expands upon the guidance found in the ludobots r
 # Requirements
 
 -Python 3.7/3.8
+
 -Linux, macOS, or Windows with Visual Studios 2017
+
 -numpy
+
 -Matplotlib
+
 -pyrosim
+
 -pybullet
 
 # Installation
