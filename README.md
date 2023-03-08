@@ -1,6 +1,6 @@
 # mybots
 
-The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation). This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible.
+The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible.
 
 # Installation
 
@@ -10,9 +10,15 @@ git clone -b assign7 https://github.com/michaeld74/mybots.git
 
 # Usage
 
-Navigate to the mybots folder and run:
+In your terminal navigate to the mybots folder and run:
 
 python3 search.py
+
+After running search you can print out a graph to display the results by running:
+
+python3 plotFitnessValues.py
+
+To make adjustments and personalize your interactions with the code you can direct your way to constants.py. Here you can first off adjust post the population size of your sample as well as the number of generations run. You can also adjust the "loop" value which will determine how long your simulation runs for. 
 
 # Evolution
 

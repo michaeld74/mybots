@@ -6,19 +6,19 @@ frequency = 10
 phaseOffset = 0
 
 # Max force for the motor
-maxForce = 100
+maxForce = 3500
 
 #How many times for loop iterates
 
-loop = 2500
+loop = 500
 
 
-numberOfGenerations = 5
+numberOfGenerations = 500
 
-populationSize = 3
+populationSize = 10
 
 numSensorNeurons = 2
 
 numMotorNeurons = 1
 
-motorJointRange = 0.8
+motorJointRange = 0.6
