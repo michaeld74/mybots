@@ -10,12 +10,12 @@ maxForce = 5000
 
 #How many times for loop iterates
 
-loop = 500
+loop = 1000
 
 
-numberOfGenerations = 500
+numberOfGenerations = 5
 
-populationSize = 10
+populationSize = 3
 
 numSensorNeurons = 2
 

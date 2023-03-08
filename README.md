@@ -48,15 +48,20 @@ insert diagrams here
 
 I think one of the more interesting observations of this specific robot is to move far from the origin it often shifts into a claw like position or something that is simlar to the Nike logo upside down. The results varried from jumping to tumbling to actually having small movements.
 
-# Visual Example
+# Visuals
 
-
-
-![Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to view videos of the robot in action]
-
-![Click HERE to view drawing of an example creature](drawing1.heic)
+Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to view videos of the robot in action
 
 ![Or download and watch here](THECS396AL_Final.mp4)
+
+
+
+Teaser Video Link (https://www.youtube.com/watch?v=nQfZdfGeR4M)
+
+![Or download and watch here](Teaser.mp4)
+
+
+
 
 This video shows 2 interations of the robot not being trained vs 2 iterations of a more trained robot with a different morphology moving away 
 
@@ -66,4 +71,7 @@ This video shows 2 interations of the robot not being trained vs 2 iterations of
 
 -K. Sims, "Evolving 3D Morphology and Behavior by Competition," in Artificial Life, vol. 1, no. 4, pp. 353-372, July 1994, doi: 10.1162/artl.1994.1.4.353.
 
--https://www.reddit.com/r/ludobots/wiki/installation/
+-https://www.reddit.com/r/ludobots/wiki/installation/ (ludobots reddit)
+
+- https://ccappelle.github.io/pyrosim/ (pyrosim)
+

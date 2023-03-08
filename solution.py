@@ -14,9 +14,10 @@ class SOLUTION:
         self.weights = self.weights * 2 - 1
         self.myID = nextAvailableID
 
-        np.random.seed(26)
+        # OPTIONAL SEED HERE
+        # np.random.seed(26)
+
         self.roof = np.random.randint(4,9)
-        # print(self.roof)
 
         self.links = np.random.randint(5,10)
         self.binSensor = np.random.randint(0,2,self.links*2)
