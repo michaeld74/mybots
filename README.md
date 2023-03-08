@@ -50,7 +50,11 @@ The body is created from a head and expands in the positive y direction extendin
 
 # Diagrams
 
-![Fig1](Fig1.png | width=100)
+![Fig1](Fig1.png | "width"=100)
+
+
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig2.png " width="150" height="280">
+
 
 Figure 1 displays a diagram showing the creature in its "world". There is a plane that holds the creature above ground and the creation of this robot/creature extends into the positive y direction with the head starting near the origin.
 
