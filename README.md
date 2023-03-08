@@ -1,6 +1,8 @@
-![Preview](THECS396AL_Final.mp4)
+
 
 # mybots
+
+![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](V4.png)
 
 The Project in this repository expands upon the guidance found in the ludobots reddit course (https://www.reddit.com/r/ludobots/wiki/installation/). This also utilizes pyrosim (Python Robot Simulation) to produce the simulations. This specific version uses bodies, sensors, motors, and synapses to design random bodies in a 3D space. The code builds off of a previous assignemtn to build a snake and literally branches off from this body to construct a random creature in the morphospace. As the body branches off it is optimized to move as far away from the origin as possible. What I felt made my project unique was instead of branching off the original snake, I revamped the build to add segments of the body two cubes at a time in the stair formation with added limbs branching off in other directions to identify how it would try to move in an optimal way. 
 
@@ -43,13 +45,17 @@ I think one of the more interesting observations of this specific robot is to mo
 
 # Visual Example
 
-![Click HERE to view drawing of an example creature](drawing1.heic)
+
 
 ![Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to view videos of the robot in action]
 
+![Click HERE to view drawing of an example creature](drawing1.heic)
+
+![Or download and watch here](THECS396AL_Final.mp4)
+
 This video shows 2 interations of the robot not being trained vs 2 iterations of a more trained robot with a different morphology moving away 
 
-![Graphical Representation of 5 simulated generations](V4.png)
+![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](V4.png)
 
 # Citations
 
