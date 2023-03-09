@@ -61,7 +61,7 @@ Figure 1 displays a diagram showing the creature in its "world". There is a plan
 
 <!-- ![Fig2](Fig2.png) -->
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig2.png" width="650" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/15_Gen_Ex.png" width="325" height="265">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig2.png" width="65" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/15_Gen_Ex.png" width="325" height="265">
 
 
 Figure 2 displays an example for how the selection process goes between parent and child following the parallel hill climber process. In this specific example we look at a simulation with a population of 3 and 15 generations. The graph depicts these 3 robots. Figure 2 demonstrates the evolution of the most optimal one. As seen in the far right of figure 2, there is a decision between parent child to see "who should go on". The robot with the better fitness value becomes the parent for the next interation and this comparison continues for all 15 generations. As seen in both the graph and the diagram, there is a change of parent every time there is an increase in the y on the graph and a move to a new green circl in the diagram.
@@ -87,9 +87,9 @@ Teaser Video Link (https://www.youtube.com/watch?v=nQfZdfGeR4M)
 
 
 
-Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10:
+Below are each of the 10 different simulations with Population Size:10, Generations:500, Distance From Origin: Units*10:
 
-![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](V4.png)
+
 
 <img src="https://github.com/michaeld74/mybots/blob/assign8/V1.png" width="325" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V2.png" width="325" height="265">
 
