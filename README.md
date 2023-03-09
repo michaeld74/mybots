@@ -58,8 +58,13 @@ The body is created from a head and expands in the positive y direction extendin
 
 Figure 1 displays a diagram showing the creature in its "world". There is a plane that holds the creature above ground and the creation of this robot/creature extends into the positive y direction with the head starting near the origin.
 
-![Fig2](Fig2.png)
-![15_Gen_Ex](15_Gen_Ex.png)
+
+<!-- ![Fig2](Fig2.png) -->
+
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig2.png" width="700" height="300">
+<!-- ![15_Gen_Ex](15_Gen_Ex.png) -->
+<img src="https://github.com/michaeld74/mybots/blob/assign8/15_Gen_Ex.png" width="400" height="400">
+
 
 Figure 2 displays an example for how the selection process goes between parent and child following the parallel hill climber process. In this specific example we look at a simulation with a population of 3 and 15 generations. The graph depicts these 3 robots. Figure 2 demonstrates the evolution of the most optimal one. As seen in the far right of figure 2, there is a decision between parent child to see "who should go on". The robot with the better fitness value becomes the parent for the next interation and this comparison continues for all 15 generations. As seen in both the graph and the diagram, there is a change of parent every time there is an increase in the y on the graph and a move to a new green circl in the diagram.
 
