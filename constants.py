@@ -13,9 +13,9 @@ maxForce = 4000
 loop = 600
 
 
-numberOfGenerations = 500
+numberOfGenerations = 10
 
-populationSize = 10
+populationSize = 5
 
 numSensorNeurons = 2
 

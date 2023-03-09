@@ -42,7 +42,7 @@ After running search you can print out a graph to display the results by running
 python3 plotFitnessValues.py
 ```
 
-To make adjustments and personalize your interactions with the code you can direct your way to constants.py. Here you can first off adjust both the population size of your sample as well as the number of generations run. You can also adjust the "loop" value which will determine how long your simulation runs for. 
+To make adjustments and personalize your interactions with the code you can direct your way to constants.py. Here you can first off adjust both the population size of your sample as well as the number of generations run. You can also adjust the "loop" value which will determine how long your simulation runs for. Comment or uncomment the "seed" line in solution.py to be able to create random or repeat new bodys respectively.
 
 # Evolution
 
@@ -70,7 +70,7 @@ Figure 2 displays an example for how the selection process goes between parent a
 
 Figure 3 displays the mutation process over generations which is then used to actually calulate the fitness. Starting from body it goes through the process of changing its form through the addition and subtraction of certain parts. This continues over all generations with the sole purpose of finding an optimal design and action. The actual composition of the robot is sensors and motors connected through synapses.
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig4.png" width="500" height="400">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig4.png" width="400" height="550">
 
 Figure 4 displays the Genotype and and Phenotype. The Genotype displays how the body is formed in a graphical form and the colored phenotype shows what that actual body would look like. Below an example DNA is showed and how the phenotype would turn out differently based on this
 
