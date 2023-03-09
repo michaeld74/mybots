@@ -91,7 +91,7 @@ Example of one of the 10 simulations run. Population Size:10, Generations:500, D
 
 ![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](V4.png)
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/V1.png" width="160" height="130"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V2.png" width="160" height="130"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V3.png" width="160" height="130"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V4.png" width="160" height="130">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/V1.png" width="170" height="135"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V2.png" width="170" height="135"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V3.png" width="170" height="135"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V4.png" width="170" height="135">
 
 All Graphs can be seen in the main repository folder labeled V1 through V10.
 
