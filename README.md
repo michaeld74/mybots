@@ -70,6 +70,10 @@ Figure 2 displays an example for how the selection process goes between parent a
 
 Figure 3 displays the mutation process over generations which is then used to actually calulate the fitness. Starting from body it goes through the process of changing its form through the addition and subtraction of certain parts. This continues over all generations with the sole purpose of finding an optimal design and action. The actual composition of the robot is sensors and motors connected through synapses.
 
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig4.png" width="500" height="400">
+
+Figure 4 displays the Genotype and and Phenotype. The Genotype displays how the body is formed in a graphical form and the colored phenotype shows what that actual body would look like. Below an example DNA is showed and how the phenotype would turn out differently based on this
+
 
 # Observations
 
@@ -103,7 +107,7 @@ Below are each of the 10 different simulations with Population Size:10, Generati
 
 <img src="https://github.com/michaeld74/mybots/blob/assign8/V3.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V4.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V5.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V6.png" width="180" height="150">
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/V7.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V8.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V9.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V9.png" width="180" height="150">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/V7.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V8.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V9.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V10.png" width="180" height="150">
 
 
 
