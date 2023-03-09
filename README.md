@@ -8,17 +8,17 @@ The Project in this repository expands upon the guidance found in the ludobots r
 
 # Requirements
 
--Python 3.7/3.8
+- Python 3.7/3.8
 
--Linux, macOS, or Windows with Visual Studios 2017
+- Linux, macOS, or Windows with Visual Studios 2017
 
--numpy
+- numpy
 
--Matplotlib
+- Matplotlib
 
--pyrosim
+- pyrosim
 
--pybullet
+- pybullet
 
 # Installation
 
@@ -66,6 +66,10 @@ Figure 1 displays a diagram showing the creature in its "world". There is a plan
 
 Figure 2 displays an example for how the selection process goes between parent and child following the parallel hill climber process. In this specific example we look at a simulation with a population of 3 and 15 generations. The graph depicts these 3 robots. Figure 2 demonstrates the evolution of the most optimal one. As seen in the far right of figure 2, there is a decision between parent child to see "who should go on". The robot with the better fitness value becomes the parent for the next interation and this comparison continues for all 15 generations. As seen in both the graph and the diagram, there is a change of parent every time there is an increase in the y on the graph and a move to a new green circl in the diagram.
 
+<img src="https://github.com/michaeld74/mybots/blob/assign8/Fig3.png" width="500" height="400">
+
+Figure 3 displays the mutation process over generations which is then used to actually calulate the fitness. Starting from body it goes through the process of changing its form through the addition and subtraction of certain parts. This continues over all generations with the sole purpose of finding an optimal design and action. The actual composition of the robot is sensors and motors connected through synapses.
+
 
 # Observations
 
@@ -82,6 +86,10 @@ Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to the 2 min mini-m
 Teaser Video Link (https://www.youtube.com/watch?v=nQfZdfGeR4M)
 
 ![Or download and watch here](Teaser.mp4)
+
+B-ROLL Video Link ()
+
+![Or download and watch here]()
 
 
 
@@ -101,9 +109,9 @@ Below are each of the 10 different simulations with Population Size:10, Generati
 
 # Citations
 
--K. Sims, "Evolving 3D Morphology and Behavior by Competition," in Artificial Life, vol. 1, no. 4, pp. 353-372, July 1994, doi: 10.1162/artl.1994.1.4.353.
+- K. Sims, "Evolving 3D Morphology and Behavior by Competition," in Artificial Life, vol. 1, no. 4, pp. 353-372, July 1994, doi: 10.1162/artl.1994.1.4.353.
 
--https://www.reddit.com/r/ludobots/wiki/installation/ (ludobots reddit)
+- https://www.reddit.com/r/ludobots/wiki/installation/ (ludobots reddit)
 
 - https://ccappelle.github.io/pyrosim/ (pyrosim)
 
