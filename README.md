@@ -91,9 +91,9 @@ Example of one of the 10 simulations run. Population Size:10, Generations:500, D
 
 ![Example of one of the 10 simulations run. Population Size:10, Generations:500, Distance From Origin: Units*10](V4.png)
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/V1.png" width="325" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V2.png" width="325" height="400">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/V1.png" width="325" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V2.png" width="325" height="265">
 
-<img src="https://github.com/michaeld74/mybots/blob/assign8/V3.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V4.png" width="180" height="265"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V5.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V6.png" width="180" height="150">
+<img src="https://github.com/michaeld74/mybots/blob/assign8/V3.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V4.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V5.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V6.png" width="180" height="150">
 
 <img src="https://github.com/michaeld74/mybots/blob/assign8/V7.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V8.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V9.png" width="180" height="150"> <img src="https://github.com/michaeld74/mybots/blob/assign8/V9.png" width="180" height="150">
 
