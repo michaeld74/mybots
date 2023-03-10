@@ -81,11 +81,9 @@ I think one of the more interesting observations of this specific robot is to mo
 
 # Visuals
 
-Click the link (https://www.youtube.com/watch?v=ICVO31igZIE) to the 2 min mini-movie of the robot in action
+Click the link (https://www.youtube.com/watch?v=1WUzHOPAWMo) to the 2 min mini-movie of the robot in action
 
-![Or download and watch here](THECS396AL_Final.mp4)
-
-
+![Or download and watch here](REALCS396AL_Final.mp4)
 
 Teaser Video Link (https://www.youtube.com/watch?v=nQfZdfGeR4M)
 
@@ -119,3 +117,4 @@ Below are each of the 10 different simulations with Population Size:10, Generati
 
 - https://ccappelle.github.io/pyrosim/ (pyrosim)
 
+# The Artist
